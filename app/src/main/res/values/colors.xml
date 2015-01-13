@@ -4,5 +4,7 @@
     <color name= "primaryColor">#00BCD4</color>
     <color name= "primaryColorDark">#0097A7</color>
     <color name= "accentColor">#FFFF8D</color>
+    <color name="primaryColorLight">#B2EBF2</color>
+    <color name="colorHighlight">#B6B6B6</color>
 
 </resources>

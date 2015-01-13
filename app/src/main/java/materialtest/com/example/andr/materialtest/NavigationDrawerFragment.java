@@ -2,6 +2,7 @@ package materialtest.com.example.andr.materialtest;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,7 +21,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.ClickListener{
 
     private RecyclerView recyclerView;
     public static final String PREF_FILE_NAME = "testpref";
@@ -52,6 +53,7 @@ public class NavigationDrawerFragment extends Fragment {
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView= (RecyclerView) layout.findViewById(R.id.drawerList);
         adapter = new DrawerAdapter(getActivity(), getData());
+        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return layout;
@@ -124,5 +126,10 @@ public class NavigationDrawerFragment extends Fragment {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(preferenceName, defaultValue);
+    }
+
+    @Override
+    public void itemClicked(View view, int position) {
+        startActivity(new Intent(getActivity(), RankingActivity.class));
     }
 }
