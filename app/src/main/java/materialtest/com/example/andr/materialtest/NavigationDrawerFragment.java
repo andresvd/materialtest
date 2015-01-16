@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,6 +131,10 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
 
     @Override
     public void itemClicked(View view, int position) {
-        startActivity(new Intent(getActivity(), RankingActivity.class));
+        Log.d("André", "Cheguei aqui! Cliquei");
+        if (position == 4){
+            Intent intent = new Intent(getActivity(), RankingActivity.class);
+            startActivity(intent);
+        }
     }
 }
