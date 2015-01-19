@@ -1,5 +1,9 @@
 package materialtest.com.example.andr.materialtest;
 
+import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -11,9 +15,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.TextView;
+
+import materialtest.com.example.andr.materialtest.tabs.SlidingTabLayout;
 
 
 public class RankingActivity extends ActionBarActivity {
+
+    private ViewPager mPager;
+    private SlidingTabLayout mTabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,11 @@ public class RankingActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        mTabs.setViewPager(mPager);
     }
 
 
@@ -59,15 +74,53 @@ public class RankingActivity extends ActionBarActivity {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
+        private TextView textView;
+
+        public static PlaceholderFragment getInstance(int position){
+            PlaceholderFragment mFragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt("position", position);
+            mFragment.setArguments(args);
+            return mFragment;
+        }
 
         public PlaceholderFragment() {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                                @Nullable Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_ranking, container, false);
+            textView = (TextView) rootView.findViewById(R.id.tab_position);
+            Bundle bundle = getArguments();
+            if (bundle!=null){
+                textView.setText("The page currently selected is "+bundle.getInt("position"));
+            }
             return rootView;
+        }
+    }
+
+    class MyPagerAdapter extends FragmentPagerAdapter {
+        String[] tabs;
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+            tabs = getResources().getStringArray(R.array.tabs);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabs[position];
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            PlaceholderFragment myFragment = PlaceholderFragment.getInstance(position);
+            return myFragment;
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
         }
     }
 }
