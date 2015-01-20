@@ -7,6 +7,9 @@
         <item name = "android:colorPrimaryDark">@color/primaryColorDark</item>
         <item name = "android:colorAccent">@color/accentColor</item>
         <item name="android:colorControlHighlight">@color/colorHighlight</item>
+        <item name="android:textColorPrimary">@color/white</item>
+
+
         <!-- Customize your theme here. -->
     </style>
 

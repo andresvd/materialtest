@@ -44,6 +44,13 @@ public class RankingActivity extends ActionBarActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        mTabs.setDistributeEvenly(true);
+        // Cor do indicador
+        mTabs.setSelectedIndicatorColors(getResources().getColor(R.color.accentColor));
+        // Cor do background
+        mTabs.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+
+
         mTabs.setViewPager(mPager);
     }
 
@@ -105,6 +112,7 @@ public class RankingActivity extends ActionBarActivity {
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
             tabs = getResources().getStringArray(R.array.tabs);
+
         }
 
         @Override
