@@ -8,14 +8,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import materialtest.com.example.andr.materialtest.tabs.SlidingTabLayout;
 
@@ -24,6 +31,15 @@ public class RankingActivity extends ActionBarActivity {
 
     private ViewPager mPager;
     private SlidingTabLayout mTabs;
+
+    private RecyclerView mRecyclerView;
+    private RankingRecyclerAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
+    private EditText mText;
+    private EditText mColor;
+
+    private List<RankingData> mData = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +68,36 @@ public class RankingActivity extends ActionBarActivity {
 
 
         mTabs.setViewPager(mPager);
+
+        //RECYCLER VIEW!
+        // Initializing views.
+        mText = (EditText) findViewById(R.id.textEt);
+        mColor = (EditText) findViewById(R.id.colorEt);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler);
+
+        // If the size of views will not change as the data changes.
+        mRecyclerView.setHasFixedSize(true);
+
+        // Setting the LayoutManager.
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // Setting the adapter.
+        mAdapter = new RankingRecyclerAdapter(this);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    // Called when add button is clicked.
+    public void addItem(View view) {
+        Log.d("André", "Estou adicionando uma nova cor!");
+        // Add data locally to the list.
+        RankingData dataToAdd = new RankingData(
+                mText.getText().toString(),
+                mColor.getText().toString());
+        mData.add(dataToAdd);
+
+        // Update adapter.
+        mAdapter.addItem(mData.size()-1, dataToAdd);
     }
 
 
