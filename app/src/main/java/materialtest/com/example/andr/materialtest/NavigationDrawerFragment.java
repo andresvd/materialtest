@@ -136,5 +136,10 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
             Intent intent = new Intent(getActivity(), RankingActivity.class);
             startActivity(intent);
         }
+
+        if (position == 3){
+            Intent intent = new Intent(getActivity(), TabsRanking.class);
+            startActivity(intent);
+        }
     }
 }

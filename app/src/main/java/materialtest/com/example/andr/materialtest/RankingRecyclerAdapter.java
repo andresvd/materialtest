@@ -26,6 +26,8 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.mData = new ArrayList<>();
+
+        addItem(0, new RankingData("Oi", "#FFFDDD"));
     }
 
     @Override

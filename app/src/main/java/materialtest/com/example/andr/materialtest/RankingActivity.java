@@ -75,6 +75,12 @@ public class RankingActivity extends ActionBarActivity {
         mColor = (EditText) findViewById(R.id.colorEt);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler);
 
+        if (mRecyclerView == null){
+            Log.d("André", "A recyclerview é null!!");
+        } else {
+            Log.d("André", "Existe sim a recyclerview");
+        }
+
         // If the size of views will not change as the data changes.
         mRecyclerView.setHasFixedSize(true);
 
@@ -85,6 +91,7 @@ public class RankingActivity extends ActionBarActivity {
         // Setting the adapter.
         mAdapter = new RankingRecyclerAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
+        Log.d("André", "A Activity é "+this);
     }
 
     // Called when add button is clicked.

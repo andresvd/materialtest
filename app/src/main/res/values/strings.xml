@@ -10,11 +10,13 @@
     <string name="drawer_close">Close</string>
     <string name="ranking">Ranking</string>
     <string name="title_activity_ranking">RankingActivity</string>
+
     <string-array name="tabs">
         <item>Amigos</item>
         <item>Cidade</item>
         <item>Geral</item>
-
     </string-array>
+
+    <string name="title_activity_tabs_ranking">TabsRanking</string>
 
 </resources>
