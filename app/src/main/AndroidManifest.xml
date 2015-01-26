@@ -24,6 +24,10 @@
             android:name=".TabsRanking"
             android:label="@string/title_activity_tabs_ranking" >
         </activity>
+        <activity
+            android:name=".BuscaRotaActivity"
+            android:label="@string/title_activity_busca_rota" >
+        </activity>
     </application>
 
 </manifest>

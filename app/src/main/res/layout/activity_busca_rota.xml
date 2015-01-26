@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="materialtest.com.example.andr.materialtest.BuscaRotaActivity">
+
+    <LinearLayout
+        android:id="@+id/busca_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:id="@+id/rota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/listIcon"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_map_marker_grey600_24dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/editTextOrigem"
+                android:hint="Origem"/>
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:id="@+id/editTextDestino"
+                android:hint="Destino"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:id="@+id/busIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bus_grey600_24dp"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerPreferencias"
+                android:theme="@style/Base.Theme.AppCompat.Light">
+
+            </Spinner>
+            </LinearLayout>
+
+    <CheckBox
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="  Agora"
+
+        />
+    </LinearLayout>
+
+
+</RelativeLayout>
