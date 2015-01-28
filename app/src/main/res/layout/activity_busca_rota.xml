@@ -9,6 +9,7 @@
         android:id="@+id/busca_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:orientation="vertical">
 
         <include
@@ -96,25 +97,47 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" Agora"
-                android:textSize="16dp"
-                />
+                android:textSize="16dp" />
 
             <RelativeLayout
-                android:layout_width="fill_parent"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingRight="24dp"
-                >
+                android:paddingLeft="48dp"
+                android:paddingRight="16dp">
 
-                <EditText
+                <TextView
+                    android:id="@+id/data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
+                    android:text="Data" />
+
+                <EditText
+                    android:id="@+id/dataEditView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/data"
                     android:editable="true"
-                    android:layout_alignParentRight="true"
-                    android:text="dd/mm/aaaa"
                     android:focusable="false"
-                    />
+                    android:inputType="date"
+                    android:text="dd/mm/aaaa" />
+
+                <TextView
+                    android:id="@+id/hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dataEditView"
+                    android:text="Hora" />
+
+                <EditText
+                    android:id="@+id/horaEditView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hora"
+                    android:editable="true"
+                    android:focusable="false"
+                    android:inputType="date"
+                    android:text="hh:mm" />
 
 
                 <!--DatePicker
@@ -125,8 +148,18 @@
                     ></DatePicker></!-->
 
             </RelativeLayout>
+
+
         </LinearLayout>
 
+        <Button
+            android:layout_marginTop="16dp"
+            android:id="@+id/botaoBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="24dp"
+            android:text="Buscar" />
 
     </LinearLayout>
 

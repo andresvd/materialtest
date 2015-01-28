@@ -1,18 +1,34 @@
 package materialtest.com.example.andr.materialtest;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
+
+import com.afollestad.materialdialogs.MaterialDialog;
+
+import java.util.Calendar;
 
 
 public class BuscaRotaActivity extends ActionBarActivity {
 
 
     private Toolbar toolbar;
+    Button button;
+    EditText dataEdit;
+    EditText hourEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +51,70 @@ public class BuscaRotaActivity extends ActionBarActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+
+        //Botão
+        button = (Button) findViewById(R.id.botaoBuscar);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuscaRotaActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Data
+        dataEdit = (EditText) findViewById(R.id.dataEditView);
+        dataEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("André", "Abri o datePicker");
+
+                Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
+                System.out.println("the selected " + mDay);
+                DatePickerDialog dialog = new DatePickerDialog(BuscaRotaActivity.this,
+                        new mDateSetListener(), mYear, mMonth, mDay);
+                dialog.show();
+
+
+                /*DatePickerDialog.OnDateSetListener callback = new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                    }
+                };
+                DatePickerDialog dialog = new DatePickerDialog(BuscaRotaActivity.this, callback, );
+                DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
+                boolean wrapInScrollView = true;
+                new MaterialDialog.Builder(BuscaRotaActivity.this)
+
+                        .customView(R.layout.date_picker, wrapInScrollView)
+                        .positiveText(R.string.ok).positiveColor(R.color.primaryColor)
+                        .build()
+                        .show();*/
+            }
+        });
+
+        hourEdit= (EditText) findViewById(R.id.horaEditView);
+        hourEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("André", "Abri o hourPicker");
+
+                Calendar c = Calendar.getInstance();
+                int mHour = c.get(Calendar.HOUR_OF_DAY);
+                int mMinute = c.get(Calendar.MINUTE);
+                boolean is24HourView = true;
+                TimePickerDialog timePickerDialog = new TimePickerDialog(BuscaRotaActivity.this, new mTimeSetListener(),mHour,mMinute, is24HourView);
+
+                timePickerDialog.show();
+
+            }
+        });
     }
 
 
@@ -58,5 +138,39 @@ public class BuscaRotaActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    class mDateSetListener implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            // getCalender();
+            int mYear = year;
+            int mMonth = monthOfYear;
+            int mDay = dayOfMonth;
+            EditText v = (EditText) findViewById(R.id.dataEditView);
+            v.setText(new StringBuilder()
+                    // Month is 0 based so add 1
+                    .append(mDay).append("/").append(mMonth + 1).append("/")
+                    .append(mYear).append(" "));
+            System.out.println(v.getText().toString());
+
+
+        }
+    }
+
+    class mTimeSetListener implements TimePickerDialog.OnTimeSetListener {
+
+
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            int mHourOfDay = hourOfDay;
+            int mMinute = minute;
+            EditText hourText = (EditText) findViewById(R.id.horaEditView);
+            hourText.setText(new StringBuilder().append(mHourOfDay).append(":").append(mMinute));
+
+        }
     }
 }

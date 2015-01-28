@@ -16,7 +16,6 @@
         <item>Cidade</item>
         <item>Geral</item>
     </string-array>
-
     <string-array name="spinnerRotas">
         <item>Mais rápida</item>
         <item>Menor distância</item>
@@ -28,5 +27,6 @@
     <string name="medalha_titulo_centenario_onibus">Centenário do Ônibus!\n300 pontos</string>
     <string name="medalha_corpo_centenario_onibus">Você já é usuário assíduo dos ônibus. Depois de muito chão, é hora de comemorar seu centenário. São 100 quilômetros de muitas rotas e destinos desbravados. Continue assim e sua recompensa será maior ainda!</string>
     <string name="title_activity_busca_rota">BuscaRotaActivity</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

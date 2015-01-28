@@ -55,11 +55,21 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
                     Log.d("André", "Short Click!");
                     //Typeface newFont = Typeface.createFromAsset(context.getAssets(), "fonts/myFont.tff");
 
-                    MaterialDialog materialDialog = new MaterialDialog.Builder(context).title(context.getString(R.string.medalha_titulo_centenario_onibus))
+                    /*MaterialDialog materialDialog = new MaterialDialog.Builder(context).title(context.getString(R.string.medalha_titulo_centenario_onibus))
                             .content(context.getString(R.string.medalha_corpo_centenario_onibus))
                             .positiveText(R.string.ok)
                             .iconRes(R.drawable.medal_icon).positiveColor(R.color.primaryColor)
+                            .show();*/
+
+                    boolean wrapInScrollView = true;
+                    new MaterialDialog.Builder(context)
+
+                            .customView(R.layout.date_picker, wrapInScrollView)
+                            .positiveText(R.string.ok).positiveColor(R.color.primaryColor)
+                            .build()
                             .show();
+
+
                 }
             }
         });
