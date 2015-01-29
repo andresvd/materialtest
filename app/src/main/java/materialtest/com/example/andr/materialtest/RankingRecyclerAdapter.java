@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +41,7 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
     @Override
     public void onBindViewHolder(RecyclerViewHolder viewHolder, int position) {
         viewHolder.title.setText(mData.get(position).text);
+        Log.d("André", "O dado da posiçao é "+mData.get(position).color);
         viewHolder.icon.setBackgroundColor(Color.parseColor(mData.get(position).color));
         //MaterialDialog.Builder()
         viewHolder.setClickListener(new RecyclerViewHolder.ClickListener() {
@@ -61,13 +61,7 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
                             .iconRes(R.drawable.medal_icon).positiveColor(R.color.primaryColor)
                             .show();*/
 
-                    boolean wrapInScrollView = true;
-                    new MaterialDialog.Builder(context)
 
-                            .customView(R.layout.date_picker, wrapInScrollView)
-                            .positiveText(R.string.ok).positiveColor(R.color.primaryColor)
-                            .build()
-                            .show();
 
 
                 }
@@ -86,6 +80,7 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
     }
 
     public void addItem(int position, RankingData data) {
+        Log.d("André", "Adapter adicionou a nova cor");
         mData.add(position, data);
         notifyItemInserted(position);
     }

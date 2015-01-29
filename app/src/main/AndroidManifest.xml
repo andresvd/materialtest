@@ -51,6 +51,10 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" >
         </activity>
+        <activity
+            android:name=".EscolhaRotaActivity"
+            android:label="@string/title_activity_escolha_rota" >
+        </activity>
     </application>
 
 </manifest>

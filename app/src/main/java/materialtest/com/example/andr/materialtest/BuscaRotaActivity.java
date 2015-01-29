@@ -59,7 +59,7 @@ public class BuscaRotaActivity extends ActionBarActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BuscaRotaActivity.this, MapsActivity.class);
+                Intent intent = new Intent(BuscaRotaActivity.this, EscolhaRotaActivity.class);
                 startActivity(intent);
             }
         });

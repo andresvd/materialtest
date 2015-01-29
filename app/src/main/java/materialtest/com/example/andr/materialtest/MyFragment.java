@@ -45,14 +45,22 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("André","Inicializando fragment");
         View layout = inflater.inflate(R.layout.fragment_my, container, false);
-        textView = (TextView) layout.findViewById(R.id.position);
+        textView = (TextView) layout.findViewById(R.id.position2);
         Bundle bundle = getArguments();
         inicializaNavigationDrawer(layout);
         if (bundle != null) {
             textView.setText("The Page Selected Is " + bundle.getInt("position"));
             Log.d("André","Adicionando Cor");
-            RankingData dataToAdd = new RankingData("Bla", "FF00e5");
+            RankingData dataToAdd = new RankingData("Bla", "#FF00E5");
             addItem(dataToAdd);
+            addItem(dataToAdd);
+            addItem(dataToAdd);
+            addItem(dataToAdd);
+            addItem(dataToAdd);
+            addItem(dataToAdd);
+            addItem(dataToAdd);
+            addItem(dataToAdd);
+
         }
 
 
@@ -89,7 +97,7 @@ public class MyFragment extends Fragment {
         // Add data locally to the list.
 
         mData.add(dataToAdd);
-
+        Log.d("André", "Adicionando item!");
         // Update adapter.
         mAdapter.addItem(mData.size()-1, dataToAdd);
     }

@@ -7,7 +7,7 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/instrucoes"
+        android:id="@+id/passos"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:text="- Instrução 1\n- Instrução 2\n- Instrução 3\n- Instrução 4" />
@@ -23,6 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:textAlignment="gravity"
+
             android:layout_marginLeft="32dp"
 
             android:src="@drawable/ic_chevron_right_grey600_24dp" />
@@ -30,12 +32,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/duracaoRota"
             android:text="60 min"
             android:layout_marginBottom="8dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/preco"
             android:text="R$ 2,45" />
     </LinearLayout>
 

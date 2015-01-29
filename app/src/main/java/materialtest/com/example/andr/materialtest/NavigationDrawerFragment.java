@@ -146,5 +146,6 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
             Intent intent = new Intent(getActivity(), BuscaRotaActivity.class);
             startActivity(intent);
         }
+
     }
 }
