@@ -37,7 +37,7 @@ public class RotasRecyclerAdapter extends RecyclerView.Adapter<RotasRecyclerView
             @Override
             public void onClick(View v, int position, boolean isLongClick) {
                 if (!isLongClick){
-                    Intent intent = new Intent(activity, MapsActivity.class);
+                    Intent intent = new Intent(activity, PathGoogleMapActivity.class);
                     activity.startActivity(intent);
                 }
             }
