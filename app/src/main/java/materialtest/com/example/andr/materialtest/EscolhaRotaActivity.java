@@ -35,7 +35,7 @@ public class EscolhaRotaActivity extends ActionBarActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // Setting the adapter
-        mAdapter = new RotasRecyclerAdapter();
+        mAdapter = new RotasRecyclerAdapter(EscolhaRotaActivity.this);
         mRecyclerView.setAdapter(mAdapter);
     }
 
