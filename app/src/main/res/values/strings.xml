@@ -29,5 +29,6 @@
     <string name="title_activity_busca_rota">BuscaRotaActivity</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_escolha_rota">EscolhaRotaActivity</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
 
 </resources>

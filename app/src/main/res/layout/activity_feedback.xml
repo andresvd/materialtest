@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/feedback_layout"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="materialtest.com.example.andr.materialtest.FeedbackActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingTop="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:paddingTop="8dp"
+            android:id="@+id/feedbackDuracaoRota"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:text="Parabéns, você terminou a rota em 65 minutos!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:paddingTop="8dp"
+            android:id="@+id/feedbackPontuacao"
+            android:textColor="@color/black"
+            android:text="Você ganhou 100 pontos."
+            android:textSize="14dp"
+            android:paddingBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View style="@style/Divider" />
+
+        <TextView
+            android:paddingTop="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/feedbackPerguntaSatisfacao"
+            android:text="Como você classificaria esta rota?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ruim" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Regular" />
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Boa" />
+
+        </RadioGroup>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ônibus demorou a chegar" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Houve engarrafamento" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não havia disponibilidade de bicicletas" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingTop="8dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver Ranking"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sair"/>
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

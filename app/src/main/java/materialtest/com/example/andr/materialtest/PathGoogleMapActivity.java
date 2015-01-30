@@ -6,11 +6,15 @@ import java.util.List;
 
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,11 +24,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class PathGoogleMapActivity extends FragmentActivity {
+    Button terminarRota;
 
 	private static final LatLng LOWER_MANHATTAN = new LatLng(40.722543,
 			-73.998585);
 	private static final LatLng BROOKLYN_BRIDGE = new LatLng(40.7057, -73.9964);
 	private static final LatLng WALL_STREET = new LatLng(40.7064, -74.0094);
+
+    Toolbar toolbar;
 
 	GoogleMap googleMap;
 	final String TAG = "PathGoogleMapActivity";
@@ -35,7 +42,16 @@ public class PathGoogleMapActivity extends FragmentActivity {
 		setContentView(R.layout.activity_path_google_map);
 		SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.map);
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
 		googleMap = fm.getMap();
+        terminarRota = (Button) findViewById(R.id.terminarRota);
+        terminarRota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PathGoogleMapActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
 
         LatLng startLocation = LOWER_MANHATTAN;
         LatLng endLocation = BROOKLYN_BRIDGE;
