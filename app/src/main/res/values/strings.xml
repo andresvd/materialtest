@@ -21,6 +21,15 @@
         <item>Menor distância</item>
         <item>Mais barata</item>
     </string-array>
+    <string-array name="spinnerMaxDistanciaPe">
+        <item>500m</item>
+        <item>1km</item>
+        <item>2km</item>
+        <item>3km</item>
+        <item>4km</item>
+        <item>5km</item>
+        <item>10km</item>
+    </string-array>
 
     <string name="ok">OK</string>
     <string name="title_activity_tabs_ranking">TabsRanking</string>
@@ -30,5 +39,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_escolha_rota">EscolhaRotaActivity</string>
     <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="title_activity_preferencias">PreferenciasActivity</string>
+    <string name="title_activity_perfil">PerfilActivity</string>
 
 </resources>

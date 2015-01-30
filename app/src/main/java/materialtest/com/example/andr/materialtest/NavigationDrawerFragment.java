@@ -152,5 +152,15 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
             startActivity(intent);
         }
 
+        if (position == 5){
+            Intent intent = new Intent(getActivity(), PreferenciasActivity.class);
+            startActivity(intent);
+        }
+
+        if (position == 2){
+            Intent intent = new Intent(getActivity(), PerfilActivity.class);
+            startActivity(intent);
+        }
+
     }
 }

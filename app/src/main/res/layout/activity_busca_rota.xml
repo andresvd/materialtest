@@ -96,48 +96,59 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text=" Agora"
                 android:textSize="16dp" />
 
-            <RelativeLayout
-                android:layout_width="180dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="48dp"
+                android:paddingLeft="32dp"
                 android:paddingRight="16dp">
 
-                <TextView
-                    android:id="@+id/data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Data" />
 
-                <EditText
-                    android:id="@+id/dataEditView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/data"
-                    android:editable="true"
-                    android:focusable="false"
-                    android:inputType="date"
-                    android:text="dd/mm/aaaa" />
+                    <TextView
+                        android:id="@+id/data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:text="Agendar" />
 
-                <TextView
-                    android:id="@+id/hora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/dataEditView"
-                    android:text="Hora" />
 
-                <EditText
-                    android:id="@+id/horaEditView"
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/hora"
-                    android:editable="true"
-                    android:focusable="false"
-                    android:inputType="date"
-                    android:text="hh:mm" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/dataEditView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/data"
+                        android:editable="true"
+                        android:textColor="@color/colorHighlight"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:text="dd/mm/aaaa" />
+                    <EditText
+                        android:id="@+id/horaEditView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorHighlight"
+                        android:layout_below="@+id/hora"
+                        android:editable="true"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:text="hh:mm" />
+
+                    </LinearLayout>
+
+
+
+
+
 
 
                 <!--DatePicker
@@ -147,7 +158,7 @@
                     android:calendarViewShown="false"
                     ></DatePicker></!-->
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </LinearLayout>

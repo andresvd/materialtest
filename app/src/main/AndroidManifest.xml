@@ -65,6 +65,14 @@
             android:name=".FeedbackActivity"
             android:label="@string/title_activity_feedback" >
         </activity>
+        <activity
+            android:name=".PreferenciasActivity"
+            android:label="@string/title_activity_preferencias" >
+        </activity>
+        <activity
+            android:name=".PerfilActivity"
+            android:label="@string/title_activity_perfil" >
+        </activity>
     </application>
 
 </manifest>
