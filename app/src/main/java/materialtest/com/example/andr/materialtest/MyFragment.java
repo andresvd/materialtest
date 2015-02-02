@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -29,9 +30,8 @@ public class MyFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RankingRecyclerAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private EditText mText;
-    private EditText mColor;
-    private List<RankingData> mData = new ArrayList<>();
+
+    private List<RankingData> mDataAmigos = new ArrayList<>();
 
     public static MyFragment getInstance(int position) {
         MyFragment myFragment = new MyFragment();
@@ -43,6 +43,7 @@ public class MyFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         Log.d("André","Inicializando fragment");
         View layout = inflater.inflate(R.layout.fragment_my, container, false);
         textView = (TextView) layout.findViewById(R.id.position2);
@@ -50,21 +51,106 @@ public class MyFragment extends Fragment {
         inicializaNavigationDrawer(layout);
         if (bundle != null) {
             textView.setText("The Page Selected Is " + bundle.getInt("position"));
-            Log.d("André","Adicionando Cor");
-            RankingData dataToAdd = new RankingData("Bla", "#FF00E5");
-            addItem(dataToAdd);
-            addItem(dataToAdd);
-            addItem(dataToAdd);
-            addItem(dataToAdd);
-            addItem(dataToAdd);
-            addItem(dataToAdd);
-            addItem(dataToAdd);
-            addItem(dataToAdd);
+            if (bundle.getInt("position") == 0){
+                fazRankingAmigos();
+            } else if (bundle.getInt("position") == 1){
+                fazRankingCidade();
+            } else if (bundle.getInt("position") == 2){
+                fazRankingGeral();
+            }
+
+
 
         }
 
 
         return layout;
+    }
+
+    public void fazRankingAmigos(){
+        Log.d("André","Ranking Amigos");
+        RankingData dataToAdd = new RankingData("Albert Einstein", 5000, R.drawable.einstein_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Maria Monroe", 4500, R.drawable.monroe_icon, 2);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Wingardium Leviosa", 4250, R.drawable.potter_icon, 3);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Batman Robin", 4000, R.drawable.batman2, 3);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("The Only Terminator", 3500, R.drawable.terminator_icon, 4);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Not Dead", 3000, R.drawable.elvis_icon, 5);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Sherlock Holmes", 2589, R.drawable.holmes_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Astro Nauta", 2200, R.drawable.astronaut_icon, 7);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Pizza pizza", 1800, R.drawable.piz_icon, 8);
+        addItem(dataToAdd, mDataAmigos);
+    }
+
+    public void fazRankingCidade(){
+        Log.d("André","Ranking Cidade");
+        RankingData dataToAdd = new RankingData("Alguém Qualquer", 5500, R.drawable.homen_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Albert Einstein", 5000, R.drawable.einstein_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Maria Monroe", 4500, R.drawable.monroe_icon, 2);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Chef Chofer", 4350, R.drawable.chef_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Wingardium Leviosa", 4250, R.drawable.potter_icon, 3);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Batman Robin", 4000, R.drawable.batman2, 3);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("The Only Terminator", 3500, R.drawable.terminator_icon, 4);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Not Dead", 3000, R.drawable.elvis_icon, 5);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Sherlock Holmes", 2589, R.drawable.holmes_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Rock Star", 2400, R.drawable.music_female_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Astro Nauta", 2200, R.drawable.astronaut_icon, 7);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Pizza pizza", 1800, R.drawable.piz_icon, 8);
+        addItem(dataToAdd, mDataAmigos);
+    }
+
+    public void fazRankingGeral(){
+        Log.d("André","Ranking Geral");
+        RankingData dataToAdd = new RankingData("Rei Arthur", 15000, R.drawable.rei_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Alguém Qualquer", 5500, R.drawable.homen_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Albert Einstein", 5000, R.drawable.einstein_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Maria Monroe", 4500, R.drawable.monroe_icon, 2);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Chef Chofer", 4350, R.drawable.chef_icon, 1);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Wingardium Leviosa", 4250, R.drawable.potter_icon, 3);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Batman Robin", 4000, R.drawable.batman2, 3);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("The Only Terminator", 3500, R.drawable.terminator_icon, 4);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Not Dead", 3000, R.drawable.elvis_icon, 5);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Sherlock Holmes", 2589, R.drawable.holmes_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Rock Star", 2400, R.drawable.music_female_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Romero Saulo", 2350, R.drawable.asian_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Paulo Gomes", 2300, R.drawable.music_male_icon, 6);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Astro Nauta", 2200, R.drawable.astronaut_icon, 7);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Pizza pizza", 1800, R.drawable.piz_icon, 8);
+        addItem(dataToAdd, mDataAmigos);
+        dataToAdd = new RankingData("Lemony S Nicket", 1200, R.drawable.serduchka_icon, 8);
+        addItem(dataToAdd, mDataAmigos);
     }
 
     public void inicializaNavigationDrawer(View layout){
@@ -92,13 +178,13 @@ public class MyFragment extends Fragment {
     }
 
     // Called when add button is clicked.
-    public void addItem(RankingData dataToAdd) {
+    public void addItem(RankingData dataToAdd, List<RankingData> lista) {
 
         // Add data locally to the list.
 
-        mData.add(dataToAdd);
+        lista.add(dataToAdd);
         Log.d("André", "Adicionando item!");
         // Update adapter.
-        mAdapter.addItem(mData.size()-1, dataToAdd);
+        mAdapter.addItem(lista.size()-1, dataToAdd);
     }
 }

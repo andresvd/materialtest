@@ -10,14 +10,16 @@ import android.widget.TextView;
  */
 public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
-    public TextView title;
-    public ImageView icon;
+    public TextView nome;
+    public ImageView imagem;
+    public TextView pontuacao;
     private ClickListener clickListener;
 
     public RecyclerViewHolder(View itemView) {
         super(itemView);
-        title = (TextView) itemView.findViewById(R.id.title);
-        icon = (ImageView) itemView.findViewById(R.id.icon);
+        nome = (TextView) itemView.findViewById(R.id.nome);
+        imagem = (ImageView) itemView.findViewById(R.id.imagem);
+        pontuacao = (TextView) itemView.findViewById(R.id.pontuacao);
 
         // We set listeners to the whole item view, but we could also
         // specify listeners for the title or the icon.

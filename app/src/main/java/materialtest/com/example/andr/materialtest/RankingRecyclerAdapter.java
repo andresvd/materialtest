@@ -22,13 +22,13 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
     private LayoutInflater inflater;
     private Context context;
 
-    public RankingRecyclerAdapter(Context context) {
+   public RankingRecyclerAdapter(Context context) {
         // Pass context or other static stuff that will be needed.
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.mData = new ArrayList<>();
 
-        addItem(0, new RankingData("Oi", "#FFFDDD"));
+        //addItem(0, new RankingData("Oi", "#FFFDDD"));
     }
 
     @Override
@@ -40,9 +40,13 @@ public class RankingRecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHol
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder viewHolder, int position) {
-        viewHolder.title.setText(mData.get(position).text);
+        /*viewHolder.title.setText(mData.get(position).text);
         Log.d("André", "O dado da posiçao é "+mData.get(position).color);
-        viewHolder.icon.setBackgroundColor(Color.parseColor(mData.get(position).color));
+        viewHolder.icon.setBackgroundColor(Color.parseColor(mData.get(position).color));*/
+        viewHolder.nome.setText(mData.get(position).nome);
+        viewHolder.pontuacao.setText(new StringBuilder().append(mData.get(position).pontuacao).append(" pts"));
+        viewHolder.imagem.setImageResource(mData.get(position).imagemResource);
+
         //MaterialDialog.Builder()
         viewHolder.setClickListener(new RecyclerViewHolder.ClickListener() {
             @Override

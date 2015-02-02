@@ -56,6 +56,7 @@ public class TabsRanking extends ActionBarActivity implements MaterialTabListene
             @Override
             public void onPageSelected(int position) {
                 tabHost.setSelectedNavigationItem(position);
+                Log.d("André", "Esta tab é a "+position);
             }
         });
 
@@ -97,6 +98,7 @@ public class TabsRanking extends ActionBarActivity implements MaterialTabListene
     @Override
     public void onTabSelected(MaterialTab materialTab) {
         viewPager.setCurrentItem(materialTab.getPosition());
+
     }
 
     @Override

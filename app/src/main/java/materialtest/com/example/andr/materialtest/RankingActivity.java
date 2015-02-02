@@ -98,13 +98,13 @@ public class RankingActivity extends ActionBarActivity {
     public void addItem(View view) {
         Log.d("André", "Estou adicionando uma nova cor!");
         // Add data locally to the list.
-        RankingData dataToAdd = new RankingData(
+        /*RankingData dataToAdd = new RankingData(
                 mText.getText().toString(),
                 mColor.getText().toString());
         mData.add(dataToAdd);
 
         // Update adapter.
-        mAdapter.addItem(mData.size()-1, dataToAdd);
+        mAdapter.addItem(mData.size()-1, dataToAdd);*/
     }
 
 
