@@ -16,6 +16,10 @@
         <item>Cidade</item>
         <item>Geral</item>
     </string-array>
+    <string-array name="tabsTrofeu">
+        <item>Troféus</item>
+        <item>Missões</item>
+    </string-array>
     <string-array name="spinnerRotas">
         <item>Mais rápida</item>
         <item>Menor distância</item>

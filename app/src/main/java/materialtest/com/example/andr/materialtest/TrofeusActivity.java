@@ -1,15 +1,26 @@
 package materialtest.com.example.andr.materialtest;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import it.neokree.materialtabs.MaterialTab;
+import it.neokree.materialtabs.MaterialTabHost;
+import it.neokree.materialtabs.MaterialTabListener;
 
-public class TrofeusActivity extends ActionBarActivity {
+
+public class TrofeusActivity extends ActionBarActivity implements MaterialTabListener{
 
     private Toolbar toolbar;
+
+    private MaterialTabHost tabHost;
+    private ViewPager viewPager;
 
 
     @Override
@@ -19,6 +30,25 @@ public class TrofeusActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+
+        //Tabhost and viewpager
+        tabHost = (MaterialTabHost) findViewById(R.id.materialTabHost);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                tabHost.setSelectedNavigationItem(position);
+            }
+        });
+
+        for (int i = 0; i < adapter.getCount(); i++){
+            tabHost.addTab(
+                    tabHost.newTab().setText(adapter.getPageTitle(i)).setTabListener(this)
+            );
+        }
+
     }
 
 
@@ -42,5 +72,49 @@ public class TrofeusActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTabSelected(MaterialTab materialTab) {
+        viewPager.setCurrentItem(materialTab.getPosition());
+    }
+
+    @Override
+    public void onTabReselected(MaterialTab materialTab) {
+
+    }
+
+    @Override
+    public void onTabUnselected(MaterialTab materialTab) {
+
+    }
+
+    private class ViewPagerAdapter extends FragmentStatePagerAdapter {
+
+
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+
+
+        }
+
+
+        public Fragment getItem(int num) {
+            return TrofeusFragment.getInstance(num);
+        }
+
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return getResources().getStringArray(R.array.tabsTrofeu)[position];
+        }
+
+
     }
 }
