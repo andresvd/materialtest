@@ -73,6 +73,10 @@
             android:name=".PerfilActivity"
             android:label="@string/title_activity_perfil" >
         </activity>
+        <activity
+            android:name=".TrofeusActivity"
+            android:label="@string/title_activity_trofeus" >
+        </activity>
     </application>
 
 </manifest>

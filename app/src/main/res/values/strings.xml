@@ -41,5 +41,6 @@
     <string name="title_activity_feedback">FeedbackActivity</string>
     <string name="title_activity_preferencias">PreferenciasActivity</string>
     <string name="title_activity_perfil">PerfilActivity</string>
+    <string name="title_activity_trofeus">TrofeusActivity</string>
 
 </resources>

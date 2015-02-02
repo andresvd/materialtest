@@ -132,12 +132,12 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
     @Override
     public void itemClicked(View view, int position) {
         Log.d("André", "Cheguei aqui! Cliquei");
-        if (position == 4){
-            Intent intent = new Intent(getActivity(), RankingActivity.class);
+        if (position == 3){
+            Intent intent = new Intent(getActivity(), TrofeusActivity.class);
             startActivity(intent);
         }
 
-        if (position == 3){
+        if (position == 4){
             Intent intent = new Intent(getActivity(), TabsRanking.class);
             startActivity(intent);
         }
