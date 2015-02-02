@@ -12,9 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -29,6 +31,8 @@ public class BuscaRotaActivity extends ActionBarActivity {
     Button button;
     EditText dataEdit;
     EditText hourEdit;
+    CheckBox checkBoxAgora;
+    TextView textAgendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,8 @@ public class BuscaRotaActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+        checkBoxAgora = (CheckBox) findViewById(R.id.checkboxAgora);
+        textAgendar = (TextView) findViewById(R.id.textAgendar);
 
         //Data
         dataEdit = (EditText) findViewById(R.id.dataEditView);
@@ -70,7 +76,8 @@ public class BuscaRotaActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Log.d("André", "Abri o datePicker");
-
+                checkBoxAgora.setChecked(false);
+                enableAgendar();
                 Calendar c = Calendar.getInstance();
                 int mYear = c.get(Calendar.YEAR);
                 int mMonth = c.get(Calendar.MONTH);
@@ -104,7 +111,8 @@ public class BuscaRotaActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Log.d("André", "Abri o hourPicker");
-
+                checkBoxAgora.setChecked(false);
+                enableAgendar();
                 Calendar c = Calendar.getInstance();
                 int mHour = c.get(Calendar.HOUR_OF_DAY);
                 int mMinute = c.get(Calendar.MINUTE);
@@ -115,6 +123,35 @@ public class BuscaRotaActivity extends ActionBarActivity {
 
             }
         });
+
+
+
+        checkBoxAgora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBoxAgora.isChecked()){
+                    //Desabilita toda a parte de agendar e habilita checkbox
+                    disableAgendar();
+                } else if (!checkBoxAgora.isChecked()){
+                    //Habilita parte de agendar e desabilita checkbox
+                    enableAgendar();
+
+                }
+            }
+        });
+    }
+
+    public void enableAgendar(){
+        textAgendar.setTextColor(getResources().getColor(R.color.black));
+        dataEdit.setTextColor(getResources().getColor(R.color.black));
+        hourEdit.setTextColor(getResources().getColor(R.color.black));
+        checkBoxAgora.setTextColor(getResources().getColor(R.color.colorHighlight));
+    }
+    public void disableAgendar(){
+        textAgendar.setTextColor(getResources().getColor(R.color.colorHighlight));
+        dataEdit.setTextColor(getResources().getColor(R.color.colorHighlight));
+        hourEdit.setTextColor(getResources().getColor(R.color.colorHighlight));
+        checkBoxAgora.setTextColor(getResources().getColor(R.color.black));
     }
 
 
