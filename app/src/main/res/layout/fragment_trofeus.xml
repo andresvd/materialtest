@@ -29,6 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/trofeu1"
                     android:src="@drawable/medal_icon" />
 
                 <ImageView
@@ -36,6 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/trofeu2"
                     android:src="@drawable/medal_2" />
 
                 <ImageView
@@ -43,6 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/trofeu3"
                     android:src="@drawable/medal_twitter" />
             </LinearLayout>
 
@@ -67,6 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/trofeu4"
                     android:src="@drawable/face" />
 
                 <ImageView
@@ -74,6 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/trofeu5"
                     android:src="@drawable/bus_medal" />
 
                 <ImageView
@@ -81,6 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:id="@+id/trofeu6"
                     android:src="@drawable/owl" />
             </LinearLayout>
 

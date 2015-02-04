@@ -28,5 +28,6 @@
         <!-- A cor principal vai ser a accent color, mas não consigo mudar a cor da letra da data -->
         <item name="android:colorAccent">@color/primaryColor</item>
 
+
     </style>
 </resources>

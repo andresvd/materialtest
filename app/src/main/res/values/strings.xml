@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">materialtest</string>
-    <string name="title_activity_main">Ubitrans</string>
+    <string name="title_activity_main">Ubitrans - Perfil</string>
     <string name="hello_world">Bem vindo ao Ubitrans!</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -36,15 +36,15 @@
     </string-array>
 
     <string name="ok">OK</string>
-    <string name="title_activity_tabs_ranking">TabsRanking</string>
+    <string name="title_activity_tabs_ranking">Ranking</string>
     <string name="medalha_titulo_centenario_onibus">Centenário do Ônibus!\n300 pontos</string>
     <string name="medalha_corpo_centenario_onibus">Você já é usuário assíduo dos ônibus. Depois de muito chão, é hora de comemorar seu centenário. São 100 quilômetros de muitas rotas e destinos desbravados. Continue assim e sua recompensa será maior ainda!</string>
-    <string name="title_activity_busca_rota">BuscaRotaActivity</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="title_activity_escolha_rota">EscolhaRotaActivity</string>
-    <string name="title_activity_feedback">FeedbackActivity</string>
-    <string name="title_activity_preferencias">PreferenciasActivity</string>
-    <string name="title_activity_perfil">PerfilActivity</string>
-    <string name="title_activity_trofeus">TrofeusActivity</string>
+    <string name="title_activity_busca_rota">Busca de Rota</string>
+    <string name="title_activity_maps">Mapa</string>
+    <string name="title_activity_escolha_rota">Escolha de Rota</string>
+    <string name="title_activity_feedback">Fim de Rota</string>
+    <string name="title_activity_preferencias">Preferências</string>
+    <string name="title_activity_perfil">Ubitrans - Perfil</string>
+    <string name="title_activity_trofeus">Troféus e Missões</string>
 
 </resources>
