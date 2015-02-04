@@ -1,6 +1,7 @@
 package materialtest.com.example.andr.materialtest;
 
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,7 +21,9 @@ public class FeedbackActivity extends ActionBarActivity {
         setContentView(R.layout.activity_feedback);
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
         buttonRanking = (Button) findViewById(R.id.buttonRanking);
         buttonRanking.setOnClickListener(new View.OnClickListener() {
             @Override

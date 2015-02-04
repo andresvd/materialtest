@@ -1,69 +1,90 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="materialtest.com.example.andr.materialtest.PreferenciasActivity">
 
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar" />
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="8dp">
+        tools:context="materialtest.com.example.andr.materialtest.PreferenciasActivity">
 
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar" />
 
-        <Switch
+        <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/drawer_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:checked="true"
-            android:text="Notificações" />
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:checked="true"
-            android:text="Sons" />
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:checked="true"
-            android:text="Habilitar uso de bicicleta" />
+            android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+
+            <Switch
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="Distância máxima para andar a pé" />
+                android:layout_marginBottom="8dp"
+                android:checked="true"
+                android:text="Notificações" />
 
-            <Spinner
-                android:id="@+id/spinnerMaxDistanciaPe"
-                android:layout_width="wrap_content"
+            <Switch
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:textDirection="firstStrong"
-                android:layout_marginLeft="40dp"
-                android:textAlignment="gravity"
-                android:theme="@style/Base.Theme.AppCompat.Light">
+                android:layout_marginBottom="8dp"
+                android:checked="true"
+                android:text="Sons" />
 
-            </Spinner>
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:checked="true"
+                android:text="Habilitar uso de bicicleta" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distância máxima para andar a pé"
+                    android:textColor="@color/black" />
+
+                <Spinner
+                    android:id="@+id/spinnerMaxDistanciaPe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="40dp"
+                    android:textAlignment="gravity"
+                    android:textDirection="firstStrong"
+                    android:theme="@style/Base.Theme.AppCompat.Light">
+
+                </Spinner>
+
+            </LinearLayout>
 
         </LinearLayout>
 
+            <fragment
+                android:id="@+id/fragment_navigation_drawer"
+                android:layout_width="@dimen/nav_drawer_width"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:layout="@layout/fragment_navigation_drawer"
+                android:name="materialtest.com.example.andr.materialtest.NavigationDrawerFragment"
+                tools:layout="@layout/fragment_navigation_drawer" />
+        </android.support.v4.widget.DrawerLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+

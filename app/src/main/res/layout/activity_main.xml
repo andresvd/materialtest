@@ -23,6 +23,7 @@
         android:id="@+id/fragment_navigation_drawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
+
         android:layout_gravity="start"
         app:layout="@layout/fragment_navigation_drawer"
         android:name="materialtest.com.example.andr.materialtest.NavigationDrawerFragment"
