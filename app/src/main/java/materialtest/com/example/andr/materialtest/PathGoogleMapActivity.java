@@ -33,6 +33,14 @@ public class PathGoogleMapActivity extends FragmentActivity {
 	private static final LatLng BROOKLYN_BRIDGE = new LatLng(40.7057, -73.9964);
 	private static final LatLng WALL_STREET = new LatLng(40.7064, -74.0094);
 
+
+    private static final LatLng UFPE = new LatLng(-8.048156, -34.954280);
+    private static final LatLng DERBY = new LatLng(-8.056719, -34.899305);
+    private static final LatLng REC_ANTIGO = new LatLng(-8.064448, -34.874275);
+    private static final LatLng CAXANGA = new LatLng(-8.043667, -34.933478);
+    private static final LatLng CAPIBARIBE = new LatLng(-8.063393, -34.879411);
+
+
     Toolbar toolbar;
 
 	GoogleMap googleMap;
@@ -62,21 +70,29 @@ public class PathGoogleMapActivity extends FragmentActivity {
             }
         });
 
-        LatLng startLocation = LOWER_MANHATTAN;
-        LatLng endLocation = BROOKLYN_BRIDGE;
+        googleMap.addMarker(new MarkerOptions().position(UFPE ).title("Pega ônibus 440 - CDU Caxangá/Boa Viagem"));
+        fazPassoRota(UFPE, CAXANGA, null);
+        fazPassoRota(CAXANGA, DERBY, "Pega ônibus 42 - Aeroporto");
+
+        fazPassoRota(DERBY, CAPIBARIBE, "Pega bicileta e atravessa ponte Maurício de Nassau e dobra a primeira à esquerda");
+        fazPassoRota(CAPIBARIBE, REC_ANTIGO, "Fim de rota");
+        /*
+        LatLng startLocation = UFPE;
+        LatLng endLocation = DERBY;
 
 
         googleMap.addMarker(new MarkerOptions().position(startLocation ).title("start"));
         googleMap.addMarker(new MarkerOptions().position(endLocation ).title("Pega Bicicleta"));
 
-;
-        googleMap.addMarker(new MarkerOptions().position(WALL_STREET ).title("Fim"));
+
+        googleMap.addMarker(new MarkerOptions().position(REC_ANTIGO ).title("Fim"));
 
         Navigator navigator = new Navigator(googleMap, startLocation, endLocation);
         navigator.findDirections(true);
-        Navigator navigator2 = new Navigator(googleMap, endLocation, WALL_STREET);
-        navigator2.findDirections(true);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BROOKLYN_BRIDGE,
+
+        Navigator navigator2 = new Navigator(googleMap, endLocation, REC_ANTIGO);
+        navigator2.findDirections(true);*/
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(UFPE,
                 13));
 
 		/*MarkerOptions options = new MarkerOptions();
@@ -93,6 +109,15 @@ public class PathGoogleMapActivity extends FragmentActivity {
 		addMarkers();*/
 
 	}
+
+    private void fazPassoRota(LatLng inicio, LatLng fim, String textoFim){
+        Navigator navigator = new Navigator(googleMap, inicio, fim);
+        navigator.findDirections(true);
+        if (textoFim != null){
+            googleMap.addMarker(new MarkerOptions().position(fim ).title(textoFim));
+        }
+
+    }
 
 	private String getMapsApiDirectionsUrl() {
 		String waypoints =
