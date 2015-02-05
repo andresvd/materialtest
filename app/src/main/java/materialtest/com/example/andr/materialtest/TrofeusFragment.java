@@ -122,7 +122,7 @@ public class TrofeusFragment extends Fragment {
         MaterialDialog materialDialog = new MaterialDialog.Builder(getActivity()).title(titulo)
                 .content(descricao)
                 .positiveText(R.string.ok)
-                .iconRes(drawableIcon).positiveColor(R.color.primaryColor)
+                .iconRes(drawableIcon).positiveColorRes(R.color.primaryColor)
                 .show();
     }
 
