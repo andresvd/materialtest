@@ -1,49 +1,104 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="materialtest.com.example.andr.materialtest.PathGoogleMapActivity">
 
-    <include
+    <!--include
         android:id="@+id/app_bar"
-        layout="@layout/app_bar" />
+        layout="@layout/app_bar" /></!-->
 
 
-    <android.support.v4.widget.DrawerLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <android.support.v4.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/map"
-        android:layout_below="@+id/app_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <fragment
+                android:id="@+id/map"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-        class="com.google.android.gms.maps.SupportMapFragment">
+                >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/terminarRota"
-            android:text="Terminar"/>
-        </fragment>
-        </LinearLayout>
+                <Button
+                    android:id="@+id/terminarRota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terminar" />
+
+
+            </fragment>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="418dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:id="@+id/textoRotaMapa"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="1 - Na parada 020508 pega ônibus 440 (CDU Caxangá/Boa Viagem)\n2 - Ao chegar na praça do Derby, troca para ônibus 042 (Aeroporto)
+\n3 - Ao chegar na parada 030203 da Av. Guararapes, descer do ônibus e pegar bicicleta
+\n4 - Pedalar atravessando Ponte Maurício de Nassau
+\n5 - Virar a primeira à direita, na rua Me. Deus"
+                        android:textColor="#000"
+                        android:background="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/footerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="BLA BOLA BLABLA" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
         <fragment
             android:id="@+id/fragment_navigation_drawer"
             android:name="materialtest.com.example.andr.materialtest.NavigationDrawerFragment"
-            tools:layout="@layout/fragment_navigation_drawer"
             android:layout_width="@dimen/nav_drawer_width"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:layout="@layout/fragment_navigation_drawer" />
+            app:layout="@layout/fragment_navigation_drawer"
+            tools:layout="@layout/fragment_navigation_drawer" />
     </android.support.v4.widget.DrawerLayout>
 
 

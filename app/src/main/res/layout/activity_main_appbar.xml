@@ -58,7 +58,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1500 pontos"
+                        android:text="4000 pontos"
                         android:textColor="@color/accentColor"
                         android:textSize="34sp"/>
                 </LinearLayout>

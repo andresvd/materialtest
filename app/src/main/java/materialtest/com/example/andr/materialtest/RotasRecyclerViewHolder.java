@@ -12,6 +12,7 @@ class RotasRecyclerViewHolder extends RecyclerView.ViewHolder implements View.On
     public TextView passos;
     public TextView duracaoRota;
     public TextView preco;
+    public TextView resumoRota;
     private ClickListener clickListener;
 
     public RotasRecyclerViewHolder(View itemView) {
@@ -19,7 +20,7 @@ class RotasRecyclerViewHolder extends RecyclerView.ViewHolder implements View.On
         passos = (TextView) itemView.findViewById(R.id.passos);
         duracaoRota = (TextView) itemView.findViewById(R.id.duracaoRota);
         preco = (TextView) itemView.findViewById(R.id.preco);
-
+        resumoRota = (TextView) itemView.findViewById(R.id.resumoPassos);
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
     }
