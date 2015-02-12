@@ -47,13 +47,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/editTextOrigem"
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="8dp"
-                    android:hint="Origem" />
+
+
+                    <EditText
+                        android:id="@+id/editTextOrigem"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="8dp"
+
+                        android:drawableRight="@drawable/ic_crosshairs_gps_grey600_24dp"
+                        android:hint="Origem" />
+
+
 
                 <EditText
                     android:id="@+id/editTextDestino"
@@ -63,6 +69,8 @@
                     android:hint="Destino" />
 
             </LinearLayout>
+
+
 
         </LinearLayout>
 

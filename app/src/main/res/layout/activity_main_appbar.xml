@@ -41,7 +41,7 @@
                     android:id="@+id/perfilIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/batman"/>
+                    android:src="@drawable/administrator256"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textSize="24sp"
-                        android:text="Batman Robin"/>
+                        android:text="Pedro Lyra"/>
 
                     <TextView
                         android:layout_marginTop="8dp"

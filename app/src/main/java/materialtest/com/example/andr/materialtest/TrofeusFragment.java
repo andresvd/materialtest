@@ -127,18 +127,19 @@ public class TrofeusFragment extends Fragment {
     }
 
     public void fazMissoes(){
-        adicionaMissao("Centenário do ônibus", "Ande um total de 100 km de ônibus", 200);
-        adicionaMissao("Triatlo", "Use os três modais de transporte (bicicleta, ônibus e metrô) em menos de 24 horas", 100);
-        adicionaMissao("Subterrâneo", "Percorra um total de 200km em metrô", 200);
-        adicionaMissao("Twitteiro", "Divulgue o Ubitrans no twitter", 50);
-        adicionaMissao("Ciclista", "Percorra um total de 100 km de bicicleta", 200);
+        adicionaMissao("Centenário do ônibus", "Ande um total de 100 km de ônibus", 100);
+        adicionaMissao("Triatlo", "Use os três modais de transporte (bicicleta, ônibus e metrô) em menos de 24 horas", 75);
+        adicionaMissao("Subterrâneo Bronze", "Percorra um total de 100km em metrô", 100);
+        adicionaMissao("Ciclista Bronze", "Percorra um total de 100 km de bicicleta", 200);
+        adicionaMissao("Salvador de CO2 Ouro", "Percorra um total de 500km fora dos horários de pico", 750);
         adicionaMissao("Coruja!", "Percorrer um total de 100 km depois das 21 horas", 200);
-        adicionaMissao("Subterrâneo", "Percorra um total de 200km em metrô", 200);
-        adicionaMissao("Salvador de CO2", "Percorra um total de 500km fora dos horários de pico", 750);
-        adicionaMissao("Subterrâneo", "Percorra um total de 200km em metrô", 200);
+        adicionaMissao("Subterrâneo Prata", "Percorra um total de 250km em metrô", 200);
+        adicionaMissao("Salvador de CO2 Ouro", "Percorra um total de 500km fora dos horários de pico", 750);
+        adicionaMissao("Subterrâneo Ouro", "Percorra um total de 500km em metrô", 400);
         adicionaMissao("Ubiusuário", "Realize 20 rotas no Ubitrans", 200);
-        adicionaMissao("Subterrâneo", "Percorra um total de 200km em metrô", 200);
+        adicionaMissao("Ciclista Prata", "Percorra um total de 200 km de bicicleta", 200);
         adicionaMissao("Número 1", "Passe ao menos uma semana sendo o primeiro lugar no ranking entre seus amigos", 100);
+        adicionaMissao("Twitteiro", "Divulgue o Ubitrans no twitter", 50);
         adicionaMissao("Ubifidelidade", "Use o Ubitrans por 30 dias", 250);
         adicionaMissao("Subterrâneo", "Percorra um total de 200km em metrô", 200);
         adicionaMissao("Rapidez ligeira", "Percorra 20 rotas fazendo um tempo mais curto que o estimado inicialmente", 300);

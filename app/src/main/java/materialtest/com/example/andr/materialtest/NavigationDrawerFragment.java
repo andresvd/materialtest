@@ -63,7 +63,7 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
     public static List<Information> getData(){
         List<Information> data = new ArrayList<>();
         int[] icons = {R.drawable.ic_magnify_grey600_24dp, R.drawable.ic_history_grey600_24dp, R.drawable.ic_account_grey600_24dp, R.drawable.ic_trophy_grey600_24dp, R.drawable.ic_format_list_numbers_grey600_24dp, R.drawable.ic_cog_grey600_24dp};
-        String[] titles = {"Nova Busca", "Buscas Anteriores", "Perfil", "Troféus e Missões", "Ranking", "Preferências"};
+        String[] titles = {"Nova Busca de Rota", "Buscas Anteriores", "Perfil", "Troféus e Missões", "Ranking", "Preferências"};
         for (int i = 0; i < titles.length && i < icons.length; i++){
             Information current = new Information();
             current.iconId = icons[i];
@@ -147,10 +147,6 @@ public class NavigationDrawerFragment extends Fragment implements DrawerAdapter.
             startActivity(intent);
         }
 
-        if (position == 1){
-            Intent intent = new Intent(getActivity(), MapsActivity.class);
-            startActivity(intent);
-        }
 
         if (position == 5){
             Intent intent = new Intent(getActivity(), PreferenciasActivity.class);

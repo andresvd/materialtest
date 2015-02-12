@@ -69,19 +69,19 @@ public class MyFragment extends Fragment {
 
     public void fazRankingAmigos(){
         Log.d("André","Ranking Amigos");
-        RankingData dataToAdd = new RankingData("Albert Einstein", 5000, R.drawable.einstein_icon, 1);
+        RankingData dataToAdd = new RankingData("Alberto Augusto", 5000, R.drawable.einstein_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Maria Monroe", 4500, R.drawable.monroe_icon, 2);
+        dataToAdd = new RankingData("Marília Muriel", 4500, R.drawable.monroe_icon, 2);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Wingardium Leviosa", 4250, R.drawable.potter_icon, 3);
+        dataToAdd = new RankingData("Haroldo Portões", 4250, R.drawable.potter_icon, 3);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Batman Robin", 4000, R.drawable.batman2, 3);
+        dataToAdd = new RankingData("Pedro Lyra", 4000, R.drawable.administrator72, 3);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("The Only Terminator", 3500, R.drawable.terminator_icon, 4);
+        dataToAdd = new RankingData("Ricardo Silva", 3500, R.drawable.terminator_icon, 4);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Not Dead", 3000, R.drawable.elvis_icon, 5);
+        dataToAdd = new RankingData("Everaldo Cavalcanti", 3000, R.drawable.elvis_icon, 5);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Sherlock Holmes", 2589, R.drawable.holmes_icon, 6);
+        dataToAdd = new RankingData("Charles Hélio", 2589, R.drawable.holmes_icon, 6);
         addItem(dataToAdd, mDataAmigos);
         dataToAdd = new RankingData("Astro Nauta", 2200, R.drawable.astronaut_icon, 7);
         addItem(dataToAdd, mDataAmigos);
@@ -93,15 +93,15 @@ public class MyFragment extends Fragment {
         Log.d("André","Ranking Cidade");
         RankingData dataToAdd = new RankingData("Alguém Qualquer", 5500, R.drawable.homen_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Albert Einstein", 5000, R.drawable.einstein_icon, 1);
+        dataToAdd = new RankingData("Alberto Augusto", 5000, R.drawable.einstein_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Maria Monroe", 4500, R.drawable.monroe_icon, 2);
+        dataToAdd = new RankingData("Marília Muriel", 4500, R.drawable.monroe_icon, 2);
         addItem(dataToAdd, mDataAmigos);
         dataToAdd = new RankingData("Chef Chofer", 4350, R.drawable.chef_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Wingardium Leviosa", 4250, R.drawable.potter_icon, 3);
+        dataToAdd = new RankingData("Haroldo Portões", 4250, R.drawable.potter_icon, 3);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Batman Robin", 4000, R.drawable.batman2, 3);
+        dataToAdd = new RankingData("Pedro Lyra", 4000, R.drawable.administrator72, 3);
         addItem(dataToAdd, mDataAmigos);
         dataToAdd = new RankingData("The Only Terminator", 3500, R.drawable.terminator_icon, 4);
         addItem(dataToAdd, mDataAmigos);
@@ -119,19 +119,19 @@ public class MyFragment extends Fragment {
 
     public void fazRankingGeral(){
         Log.d("André","Ranking Geral");
-        RankingData dataToAdd = new RankingData("Rei Arthur", 15000, R.drawable.rei_icon, 1);
+        RankingData dataToAdd = new RankingData("Ronaldo Arthur", 15000, R.drawable.rei_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Alguém Qualquer", 5500, R.drawable.homen_icon, 1);
+        dataToAdd = new RankingData("José Silva", 5500, R.drawable.homen_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Albert Einstein", 5000, R.drawable.einstein_icon, 1);
+        dataToAdd = new RankingData("Alberto Augusto", 5000, R.drawable.einstein_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Maria Monroe", 4500, R.drawable.monroe_icon, 2);
+        dataToAdd = new RankingData("Marília Muriel", 4500, R.drawable.monroe_icon, 2);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Chef Chofer", 4350, R.drawable.chef_icon, 1);
+        dataToAdd = new RankingData("Charles Rocha", 4350, R.drawable.chef_icon, 1);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Wingardium Leviosa", 4250, R.drawable.potter_icon, 3);
+        dataToAdd = new RankingData("Haroldo Portões", 4250, R.drawable.potter_icon, 3);
         addItem(dataToAdd, mDataAmigos);
-        dataToAdd = new RankingData("Batman Robin", 4000, R.drawable.batman2, 3);
+        dataToAdd = new RankingData("Pedro Lyra", 4000, R.drawable.administrator72, 3);
         addItem(dataToAdd, mDataAmigos);
         dataToAdd = new RankingData("The Only Terminator", 3500, R.drawable.terminator_icon, 4);
         addItem(dataToAdd, mDataAmigos);
