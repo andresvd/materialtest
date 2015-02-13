@@ -77,6 +77,10 @@
             android:name=".TrofeusActivity"
             android:label="@string/title_activity_trofeus" >
         </activity>
+        <activity
+            android:name=".BuscasAnterioresActivity"
+            android:label="@string/title_activity_buscas_anteriores" >
+        </activity>
     </application>
 
 </manifest>

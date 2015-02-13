@@ -46,5 +46,6 @@
     <string name="title_activity_preferencias">Preferências</string>
     <string name="title_activity_perfil">Ubitrans - Perfil</string>
     <string name="title_activity_trofeus">Troféus e Missões</string>
+    <string name="title_activity_buscas_anteriores">Buscas Anteriores</string>
 
 </resources>

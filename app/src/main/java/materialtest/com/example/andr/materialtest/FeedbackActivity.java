@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 
 public class FeedbackActivity extends ActionBarActivity {
     private Toolbar toolbar;
@@ -41,9 +43,19 @@ public class FeedbackActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+        this.showDialog("Parabéns! Você ganhou o troféu Salvador de CO2 Ouro", "Depois de muito chão, você finalmente atingiu o ouro! Foram 500 km rodados fora do horário de pico, o que fez suas viagens serem mais rápidas e tranquilas, além de ajudar o meio ambiente! Com isso, você ganhou 750 pontos extras!", R.drawable.bus_medal);
+
+
     }
 
 
+    public void showDialog(String titulo, String descricao, int drawableIcon){
+        MaterialDialog materialDialog = new MaterialDialog.Builder(this).title(titulo)
+                .content(descricao)
+                .positiveText(R.string.ok)
+                .iconRes(drawableIcon).positiveColorRes(R.color.primaryColor)
+                .show();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
